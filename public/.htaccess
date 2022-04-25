@@ -2,18 +2,18 @@ RewriteEngine On
 
 # language redireection
 
-#RewriteCond %{HTTP:Accept-language} ^fr [NC]
+RewriteCond %{HTTP:Accept-language} ^fr [NC]
 
 # RewriteRule ^$ http://localhost:8888/lundi/public/fr/ [L,R=301]
 
-# RewriteRule ^$ http://lundi.ovh/fr/ [L,R=301]
+RewriteRule ^$ http://lundi.ovh/fr/ [L,R=301]
 
 # other laguages
 
 # all other languages will be redirect to the english website
 
-# RewriteCond %{HTTP:Accept-language} !^(fr).\* [NC]
+RewriteCond %{HTTP:Accept-language} !^(fr).\* [NC]
 
 # RewriteRule ^$ http://localhost:8888/lundi/public/en/ [L,R=301]
 
-# RewriteRule ^$ http://lundi.ovh/en/ [L,R=301]
+RewriteRule ^$ http://lundi.ovh/en/ [L,R=301]
