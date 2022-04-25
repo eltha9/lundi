@@ -84,6 +84,26 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* button styling */
+        .form-submit .form-submit-text {
+            display: block;
+        }
+
+        .form-submit .form-submit-icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 992px) {
+            .form-submit .form-submit-text {
+                display: none;
+            }
+
+            .form-submit .form-submit-icon {
+                display: block;
+            }
+
+        }
     </style>
 </head>
 
@@ -147,9 +167,9 @@
                                     class="header45_form" aria-label="Email Form">
                                     <input type="email" class="form-input w-input" maxlength="256" name="email-4"
                                         data-name="Email 4" placeholder="Votre email" id="email-4" required="" />
-                                    <a href="#" class="button is-navbar2-button w-button">
-                                        <span>Suivez notre projet</span>
-                                        <span class="material-symbols-outlined"> arrow_forward </span>
+                                    <a href="#" class="button is-navbar2-button w-button form-submit">
+                                        <span class="form-submit-text">Suivez notre projet</span>
+                                        <span class="form-submit-icon material-symbols-outlined"> arrow_forward </span>
                                     </a>
                                 </form>
                                 <div class="success-message w-form-done" tabindex="-1" role="region"
@@ -514,9 +534,9 @@
                 aria-label="Email Form">
                 <input type="email" class="form-input w-input" maxlength="256" name="email-4" data-name="Email 4"
                     placeholder="Votre email" id="email-4" required="" /><a href="#"
-                    class="button is-navbar2-button w-button">
-                    <span> Suivez notre projet </span>
-                    <span class="material-symbols-outlined"> arrow_forward </span>
+                    class="button is-navbar2-button w-button form-submit">
+                    <span class="form-submit-text"> Suivez notre projet </span>
+                    <span class="form-submit-icon material-symbols-outlined"> arrow_forward </span>
                 </a>
             </form>
             <div class="success-message w-form-done" tabindex="-1" role="region" aria-label="Email Form success">
@@ -676,9 +696,9 @@
                                     class="header45_form" aria-label="Email Form">
                                     <input type="email" class="form-input w-input" maxlength="256" name="email-4"
                                         data-name="Email 4" placeholder="Votre email" id="email-4" required="" /><a
-                                        href="#" class="button is-navbar2-button w-button">
-                                        <span> Suivez notre projet </span>
-                                        <span class="material-symbols-outlined"> arrow_forward </span>
+                                        href="#" class="button is-navbar2-button w-button form-submit">
+                                        <span class="form-submit-text"> Suivez notre projet </span>
+                                        <span class="form-submit-icon material-symbols-outlined"> arrow_forward </span>
                                     </a>
                                 </form>
                                 <div class="success-message w-form-done" tabindex="-1" role="region"
@@ -722,9 +742,10 @@
                                             <input type="email" class="form-input w-input" maxlength="256"
                                                 name="email-4" data-name="Email 4" placeholder="Votre email"
                                                 id="email-4" required="" />
-                                            <a href="#" class="button is-navbar2-button w-button">
-                                                <span> Suivez notre projet </span>
-                                                <span class="material-symbols-outlined"> arrow_forward </span>
+                                            <a href="#" class="button is-navbar2-button w-button form-submit">
+                                                <span class="form-submit-text"> Suivez notre projet </span>
+                                                <span class="form-submit-icon material-symbols-outlined"> arrow_forward
+                                                </span>
                                             </a>
                                         </form>
                                         <div class="success-message w-form-done" tabindex="-1" role="region"
