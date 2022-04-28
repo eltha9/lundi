@@ -1,7 +1,7 @@
 let mailSended = false;
 
 function sendMail(value = '', position = 'error') {
-	const serviceURL = '';
+	const serviceURL = 'https://ld-prd.lundi.ovh/mailling';
 	if (mailSended) return;
 
 	if (serviceURL.trim() !== '') {
