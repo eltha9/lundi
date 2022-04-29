@@ -1,43 +1,41 @@
 let mailSended = false;
 
-function sendMail(value = '', position = 'error') {
+function sendMail(value = '', callBack) {
 	const serviceURL = 'https://ld-prd.lundi.ovh/mailling';
 	if (mailSended) return;
 
 	if (serviceURL.trim() !== '') {
 		fetch(serviceURL, {
-			method: 'GET',
+			method: 'POST',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
 				mail: value,
-				position,
 				meta: {
 					langue: navigator?.language || '',
 					languages: navigator?.languages || [],
 				},
 			}),
 		}).then((res) => {
-			mailSended = true;
+			callBack();
 		});
 	}
 }
 
-function createEvents({formInput, formSubmit, position}) {
+function createEvents({formInput, formSubmit}) {
+	console.log('event listening');
 	formSubmit.addEventListener('click', (event) => {
-		sendMail(formInput.value, position);
+		event.preventDefault();
+		sendMail(formInput.value, () => {
+			mailSended = true;
+			formInput.value = '';
+		});
 	});
 }
 
-const topÌnput = {
-	formInput: document.querySelector('.top-form input[type=email]'),
-	formSubmit: document.querySelector('.top-form .form-submit'),
-	position: 'top',
-};
-const bottomÌnput = {
-	formInput: document.querySelector('.bottom-form input[type=email]'),
-	formSubmit: document.querySelector('.bottom-form .form-submit'),
-	position: 'bottom',
-};
+const forms = document.querySelectorAll('form');
 
-createEvents(topÌnput);
-createEvents(bottomÌnput);
+for (const form of forms) {
+	const input = form.querySelector('input[type=email]');
+	const submit = form.querySelector('.form-submit');
+	createEvents({formInput: input, formSubmit: submit});
+}
