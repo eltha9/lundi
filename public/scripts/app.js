@@ -22,20 +22,20 @@ function sendMail(value = '', callBack) {
 }
 
 function createEvents({formInput, formSubmit}) {
-	console.log('event listening');
-	formSubmit.addEventListener('click', (event) => {
-		event.preventDefault();
+    formSubmit.addEventListener('click', (event) => {
+        event.preventDefault();
 		sendMail(formInput.value, () => {
-			mailSended = true;
+            mailSended = true;
 			formInput.value = '';
 		});
 	});
+    console.log(formInput,'event is listening');
 }
 
 const forms = document.querySelectorAll('form');
 
 for (const form of forms) {
 	const input = form.querySelector('input[type=email]');
-	const submit = form.querySelector('.form-submit');
+	const submit = form.querySelector('.button-custom');
 	createEvents({formInput: input, formSubmit: submit});
 }
